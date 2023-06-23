@@ -2,11 +2,20 @@ package main
 
 import (
 	"fmt"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 )
 
 func main() {
+	// using gorilla mux
+
+	r := mux.NewRouter()
+	r.HandleFunc("/hello", helloHandler)
+	if err := http.ListenAndServe(":9000", r); err != nil {
+		log.Fatal(err)
+	}
+
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fileServer)
 	http.HandleFunc("/hello", helloHandler)
