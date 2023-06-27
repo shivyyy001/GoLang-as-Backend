@@ -14,7 +14,7 @@ import (
 	"net/http"
 )
 
-const connectionString = "mongodb+srv://shivansh:Shiv$$5955@cluster0.cisosfl.mongodb.net/?retryWrites=true&w=majority"
+const connectionString = "mongodb+srv://shivansh:<password>@cluster0.cisosfl.mongodb.net/?retryWrites=true&w=majority"
 const dbName = "netflix"
 const colName = "watchlist"
 
